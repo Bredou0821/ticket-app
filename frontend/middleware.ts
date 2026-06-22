@@ -2,10 +2,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
-const SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET ?? "change-this-secret-key"
-);
-
 const PUBLIC_ROUTES = ["/login", "/pin", "/ticket"];
 
 export async function middleware(request: NextRequest) {
@@ -22,6 +18,9 @@ export async function middleware(request: NextRequest) {
   }
 
   try {
+    const SECRET = new TextEncoder().encode(
+      process.env.JWT_SECRET ?? "change-this-secret-key"
+    );
     await jwtVerify(token, SECRET);
     return NextResponse.next();
   } catch {
