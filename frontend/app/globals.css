@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "ticket-light";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f5f5f0;
+  --color-base-300: #eeede8;
+  --color-base-content: #111111;
+  --color-primary: #d4a017;
+  --color-primary-content: #ffffff;
+  --color-neutral: #e0ddd5;
+  --color-neutral-content: #111111;
+  --color-error: #dc2626;
+  --color-error-content: #ffffff;
+  --color-success: #16a34a;
+  --color-success-content: #ffffff;
+}
+
+html, body {
+  background-color: #ffffff !important;
+  color: #111111;
+  min-height: 100dvh;
+  color-scheme: light;
+}
+
+/* Fix inputs transparents mobile — NE PAS MODIFIER */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+select,
+textarea {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #111111 !important;
+  color: #111111 !important;
+}
+
+:root {
+  --color-base-100: #ffffff;
+  --color-base-content: #111111;
+}
